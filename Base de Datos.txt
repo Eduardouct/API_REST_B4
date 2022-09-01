@@ -1,0 +1,52 @@
+CREATE TABLE "Estudiantes" (
+  "ID_Estudiantes" int,
+  "ID_usuario" Int,
+  "Rut" Varchar(12),
+  "Nombre" Varchar(30),
+  "apellido_1" Varchar(30),
+  "apellido_2" Varchar(30),
+  "Fecha_Nacimiento" date,
+  "Direccion" Varchar(30),
+  "Telefono" Int(9),
+  "Correo" varchar(30),
+  "Carrera" varchar(30)
+);
+
+CREATE INDEX "Pk" ON  "Estudiantes" ("ID_Estudiantes");
+
+CREATE INDEX "Fk" ON  "Estudiantes" ("ID_usuario");
+
+CREATE TABLE "Usuarios" (
+  "ID_usuario" int,
+  "correo" varchar(50),
+  "nickname" varchar(50),
+  "password" varchar(50)
+);
+
+CREATE INDEX "Pk" ON  "Usuarios" ("ID_usuario");
+
+CREATE TABLE "PROFESORES" (
+  "ID_Profesor" int,
+  "ID_usuario" Int,
+  "Nombre" Varchar(30),
+  "apellido_1" Varchar(30),
+  "apellido_2" Varchar(30),
+  "Telefono" Int(9),
+  "Correo" varchar(30),
+  "Asignatura" varchar(30)
+);
+
+CREATE INDEX "Pk" ON  "PROFESORES" ("ID_Profesor");
+
+CREATE INDEX "Fk" ON  "PROFESORES" ("ID_usuario");
+
+CREATE TABLE "Ramos" (
+  "ID_Estudiantes" varchar(30),
+  "ID_Ramos" int,
+  "Semestre" int,
+  "asignatura" varchar(30),
+  "nota" float,
+  PRIMARY KEY ("ID_Ramos")
+);
+
+CREATE INDEX "Fk" ON  "Ramos" ("ID_Estudiantes");
