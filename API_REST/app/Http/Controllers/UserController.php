@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//creado con php artisan make:controller UserController
 use Illuminate\Http\Request;
 use App\Models\Student;
 class UserController extends Controller
