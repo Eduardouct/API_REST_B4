@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\funcionCrud;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,8 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/usuario', [UserController::class, 'post']);
-Route::get('/usuario', [UserController::class, 'get']);
-Route::get('/usuario/{id}', [UserController::class, 'getbyid']);
-Route::put('/usuario/put/{id}', [UserController::class, 'putbyid']);
+Route::post('/usuario', [funcionCrud::class, 'post']);
+Route::get('/usuario', [funcionCrud::class, 'get']);
+Route::get('/usuario/{id}', [funcionCrud::class, 'getbyid']);
+Route::put('/usuario/put/{id}', [funcionCrud::class, 'putbyid']);
+Route::delete('/usuario/del/{id}', [funcionCrud::class, 'deletebyid']);
