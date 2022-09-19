@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/usuario', [funcionCrud::class, 'post']);
 Route::get('/usuario', [funcionCrud::class, 'get']);
-Route::get('/usuario/{id}', [funcionCrud::class, 'getbyid']);
-Route::put('/usuario/put/{id}', [funcionCrud::class, 'putbyid']);
-Route::delete('/usuario/del/{id}', [funcionCrud::class, 'deletebyid']);
+Route::get('/usuario/{ID_Usuarios}', [funcionCrud::class, 'getbyid']);
+Route::put('/usuario/put/{ID_Usuarios}', [funcionCrud::class, 'putbyid']);
+Route::delete('/usuario/del/{ID_Usuarios}', [funcionCrud::class, 'deletebyid']);

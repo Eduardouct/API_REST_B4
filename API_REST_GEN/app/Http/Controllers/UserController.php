@@ -23,14 +23,14 @@ class UserController extends Controller
         $Usuarios = Usuario::all();
         return response()->json($Usuarios);
     }
-    public function getbyid($id)
+    public function getbyid($ID_Usuarios)
     {
-        $Usuarios = Usuario::find($id);
+        $Usuarios = Usuario::find($ID_Usuarios);
         return response()->json($Usuarios);
     }
-    public function putbyid(Request $request, $id)
+    public function putbyid(Request $request, $ID_Usuarios)
     {
-        $Usuarios = Usuario::find($id);
+        $Usuarios = Usuario::find($ID_Usuarios);
 
         $Usuarios->correo = $request->input('correo');
         $Usuarios->nickname = $request->input('nickname');
