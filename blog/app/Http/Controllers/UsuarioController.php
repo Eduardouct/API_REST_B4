@@ -41,7 +41,7 @@ class UsuarioController extends Controller
        $usuario->nickname = $request->input("nickname");
        $usuario->password = $request->input("password");
        $usuario->save();
-       return $usuario;
+       return response()->json($usuario);
     }
 
     /**
@@ -50,7 +50,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ID_usuario)
     {
         //
     }
@@ -61,7 +61,7 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($ID_usuario)
     {
         //
     }
@@ -73,15 +73,15 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$ID_usuario)
     {
-        $usuario= Usuarios::findOrFail($request->id);
+        $usuario= Usuarios::find($ID_usuario);
         $usuario->correo= $request->input("correo") ;
        $usuario->nickname = $request->input("nickname");
        $usuario->password = $request->input("password");
        $usuario->save();
 
-       return $usuario;
+       return response()->json($usuario);
     }
 
     /**
@@ -90,10 +90,12 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, $ID_usuario)
     {
-       $articulo = Usuarios::destroy($request->id);
-       return $usuario;
+       $usuario= Usuarios::find($ID_usuario);
+       $usuario->delete();
+
+       return response()->json($usuario);
     }
 }
 

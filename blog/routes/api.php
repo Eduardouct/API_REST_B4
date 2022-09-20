@@ -16,9 +16,10 @@ use App\Usuarios;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+#Route::middleware('auth:api')->get('/user', function (Request $request) {
+ #  return $request->user();
+#});
+
 
 #Route::get('/usuarios','App\Http\Controllers\UsuarioController@index');
 #Route::post('/usuarios','App\Http\Controllers\UsuarioController@store');
@@ -27,5 +28,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/Usuarios', [UsuarioController::class,'store']);
 Route::get('/Usuarios', [UsuarioController::class,'index']);
-Route::delete('/Usuarios/{id}', [UsuarioController::class,'delete']);
-Route::put('/Usuarios/put/{id}',[UsuarioController::class,'update']);
+Route::delete('/Usuarios/{ID_usuario}', [UsuarioController::class,'destroy']);
+Route::put('/Usuarios/{ID_usuario}',[UsuarioController::class,'update']);
