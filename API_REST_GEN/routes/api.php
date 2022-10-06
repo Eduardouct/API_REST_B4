@@ -1,5 +1,11 @@
 <?php
 
+
+use App\Http\Controllers\Api\PROFESORESController;
+
+use App\Http\Controllers\Api\RamosController;
+
+use App\Http\Controllers\Api\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\funcionCrud;
@@ -20,6 +26,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/usuario', [funcionCrud::class, 'post']);
 Route::get('/usuario', [funcionCrud::class, 'get']);
+Route::get('/get/{tabla}', [funcionCrud::class, 'tablaSelec']);
 Route::get('/usuario/{ID_Usuarios}', [funcionCrud::class, 'getbyid']);
 Route::put('/usuario/put/{ID_Usuarios}', [funcionCrud::class, 'putbyid']);
 Route::delete('/usuario/del/{ID_Usuarios}', [funcionCrud::class, 'deletebyid']);
+Route::apiResource('usuarios', UsuarioController::class);
+Route::apiResource('ramos', RamosController::class);
+Route::apiResource('pROFESORES', PROFESORESController::class);
