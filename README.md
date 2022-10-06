@@ -1,1 +1,5 @@
 # API_REST_B4
+PRIMERO EJECUTAR LA QUERY DE Base de Datos.txt
+LUEGO, EJECUTAR DE Base de Datos AlterFK.txt
+INSERTAR VALORES CON insert_fk.txt
+CREAR VISTAS CON views.txt
