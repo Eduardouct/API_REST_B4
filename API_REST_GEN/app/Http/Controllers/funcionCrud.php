@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PROFESORES;
+use App\Models\Ramos;
 use App\Models\Usuario;
 
 class funcionCrud extends Controller
@@ -22,6 +24,11 @@ class funcionCrud extends Controller
     {
         $Usuarios = Usuario::all();
         return response()->json($Usuarios);
+    }
+    public function get2($tabla)
+    {
+        $tablaS = tablaSelec($tabla);
+        return response()->json($tablaS);
     }
     public function getbyid($ID_Usuarios)
     {
@@ -45,6 +52,18 @@ class funcionCrud extends Controller
         $Usuarios->delete();
 
         return response()->json($Usuarios);
+    }
+    public function tablaSelec($tabla)
+    {
+        if($tabla == "Profesores"){
+            $tabla = PROFESORES::all();
+            return response()->json($tabla);
+        }
+        if($tabla == "Usuario"){
+            $tabla = Usuario::all();
+            return response()->json($tabla);
+        }
+        
     }
 }
 
