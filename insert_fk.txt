@@ -1,0 +1,24 @@
+INSERT INTO laravel2.dbo.Usuarios
+           ([Correo]
+           ,[nickname]
+           ,[password])
+	 VALUES
+	 ('arminfierro2@gmail.com', 'arfnd', 'arfnd256');
+INSERT INTO laravel2.dbo.Estudiantes
+           ([RUT_E]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Fecha_Nacimiento]
+           ,[Direccion]
+		   ,[Telefono]
+           ,[Carrera])
+	 VALUES
+	 (212891754, 2, 'Armon', 'Ferrum Hank', '2002-03-24', 'Calle Siempredead 234', 966587645, 'INGC_INF');
+INSERT INTO laravel2.dbo.Ramos
+           ([ID_Estudiantes]
+           ,[Semestre]
+           ,[asignatura]
+           ,[nota])
+	 VALUES
+	 (212891762, 2, 'INFO1158', 5.0)

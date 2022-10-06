@@ -1,0 +1,10 @@
+==========================================================================
+
+Vista de Nombre de tabla Estudiante y Correo, Password de tabla Usuarios
+
+==========================================================================
+
+CREATE VIEW estud_user
+ AS SELECT e.Nombre,e.Apellidos,u.correo,u.password
+ FROM Estudiantes e, Usuarios u
+ WHERE e.ID_Usuario = u.ID;
