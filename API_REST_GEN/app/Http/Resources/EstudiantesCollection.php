@@ -5,14 +5,14 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class UsuarioCollection extends ResourceCollection
+class EstudiantesCollection extends ResourceCollection
 {
     /**
      * The resource that this resource collects.
      *
      * @var string
      */
-    public $collects = 'App\Http\Resources\UsuarioResource';
+    public $collects = 'App\Http\Resources\EstudiantesResource';
 
     /**
      * @var null
@@ -38,7 +38,7 @@ class UsuarioCollection extends ResourceCollection
     public function toArray($request)
     {
         //return parent::toArray($request);
-        return $this->collection->map(function(UsuarioResource $resource) use($request){
+        return $this->collection->map(function(EstudiantesResource $resource) use($request){
             return $resource
                 ->toArray($request);
         })->all();

@@ -5,31 +5,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int $RUT_P
+ * @property int $RUT_E
  * @property int $ID_Usuario
  * @property string $Nombre
- * @property string $apellido_1
- * @property string $apellido_2
+ * @property string $Apellidos
+ * @property string $Fecha_Nacimiento
+ * @property string $Direccion
  * @property int $Telefono
- * @property string $Asignatura
+ * @property string $Carrera
  * @property Usuario $usuario
  * @property Usuario $usuario
+ * @property Ramo[] $ramos
+ * @property Ramo[] $ramos
  */
-class PROFESORES extends Model
+class Estudiantes extends Model
 {
     /**
      * The table associated with the model.
      * 
      * @var string
      */
-    protected $table = 'PROFESORES';
+    protected $table = 'Estudiantes';
 
     /**
      * The primary key for the model.
      * 
      * @var string
      */
-    protected $primaryKey = 'RUT_P';
+    protected $primaryKey = 'RUT_E';
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -41,7 +44,7 @@ class PROFESORES extends Model
     /**
      * @var array
      */
-    protected $fillable = ['ID_Usuario', 'Nombre', 'apellido_1', 'apellido_2', 'Telefono', 'Asignatura'];
+    protected $fillable = ['ID_Usuario', 'Nombre', 'Apellidos', 'Fecha_Nacimiento', 'Direccion', 'Telefono', 'Carrera'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -49,6 +52,14 @@ class PROFESORES extends Model
     public function usuario()
     {
         return $this->belongsTo('App\Usuario', 'ID_Usuario', 'ID');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ramos()
+    {
+        return $this->hasMany('App\Ramo', 'ID_Estudiantes', 'RUT_E');
     }
 
 }

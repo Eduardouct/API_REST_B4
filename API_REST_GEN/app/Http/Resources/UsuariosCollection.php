@@ -3,10 +3,17 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class PROFESORESResource extends JsonResource
+class UsuariosCollection extends ResourceCollection
 {
+    /**
+     * The resource that this resource collects.
+     *
+     * @var string
+     */
+    public $collects = 'App\Http\Resources\UsuariosResource';
+
     /**
      * @var null
      */
@@ -23,7 +30,7 @@ class PROFESORESResource extends JsonResource
     }
 
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param Request $request
      * @return array
@@ -31,16 +38,10 @@ class PROFESORESResource extends JsonResource
     public function toArray($request)
     {
         //return parent::toArray($request);
-        return [
-            'RUT_P' => $this->RUT_P, 
- 			'ID_Usuario' => $this->ID_Usuario, 
- 			'Nombre' => $this->Nombre, 
- 			'apellido_1' => $this->apellido_1, 
- 			'apellido_2' => $this->apellido_2, 
- 			'Telefono' => $this->Telefono, 
- 			'Asignatura' => $this->Asignatura, 
- 			
-        ];
+        return $this->collection->map(function(UsuariosResource $resource) use($request){
+            return $resource
+                ->toArray($request);
+        })->all();
     }
 
     /**

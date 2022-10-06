@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property string $ID_Estudiantes
+ * @property int $ID_Estudiantes
  * @property int $ID_Ramos
  * @property int $Semestre
  * @property string $asignatura
  * @property float $nota
+ * @property Estudiante $estudiante
+ * @property Estudiante $estudiante
  */
 class Ramos extends Model
 {
@@ -31,4 +33,13 @@ class Ramos extends Model
      * @var array
      */
     protected $fillable = ['ID_Estudiantes', 'Semestre', 'asignatura', 'nota'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function estudiante()
+    {
+        return $this->belongsTo('App\Estudiante', 'ID_Estudiantes', 'RUT_E');
+    }
+
 }

@@ -6,71 +6,71 @@ use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Models\Usuario;
-use App\Http\Resources\UsuarioResource;
-use App\Http\Resources\UsuarioCollection;
+use App\Models\Estudiantes;
+use App\Http\Resources\EstudiantesResource;
+use App\Http\Resources\EstudiantesCollection;
 
-class UsuarioController extends Controller
+class EstudiantesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return UsuarioCollection
+     * @return EstudiantesCollection
      */
     public function index(Request $request)
     {
-        return new UsuarioCollection(Usuario::all());
+        return new EstudiantesCollection(Estudiantes::all());
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return UsuarioResource
+     * @return EstudiantesResource
      */
     public function store(Request $request)
     {
         $requestData = $request->all();
-        $usuario = Usuario::create($requestData);
-        return (new UsuarioResource($usuario))->setMessage('Created!');
+        $estudiantes = Estudiantes::create($requestData);
+        return (new EstudiantesResource($estudiantes))->setMessage('Created!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param Usuario $usuario
-     * @return UsuarioResource
+     * @param Estudiantes $estudiantes
+     * @return EstudiantesResource
      */
-    public function show(Usuario $usuario)
+    public function show(Estudiantes $estudiantes)
     {
-        return new UsuarioResource($usuario);
+        return new EstudiantesResource($estudiantes);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Usuario $usuario
-     * @return UsuarioResource
+     * @param Estudiantes $estudiantes
+     * @return EstudiantesResource
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, Estudiantes $estudiantes)
     {
         $requestData = $request->all();
-        $usuario->update($requestData);
-        return (new UsuarioResource($usuario))->setMessage('Updated!');
+        $estudiantes->update($requestData);
+        return (new EstudiantesResource($estudiantes))->setMessage('Updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param Usuario $usuario
+     * @param Estudiantes $estudiantes
      * @return JsonResponse
      * @throws Exception
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(Estudiantes $estudiantes)
     {
-        $usuario->delete();
+        $estudiantes->delete();
         return response()->json([
             'success' => true,
             'message' => 'Deleted!',

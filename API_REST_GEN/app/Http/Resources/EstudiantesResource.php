@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UsuarioResource extends JsonResource
+class EstudiantesResource extends JsonResource
 {
     /**
      * @var null
@@ -32,10 +32,14 @@ class UsuarioResource extends JsonResource
     {
         //return parent::toArray($request);
         return [
-            'ID_Usuarios' => $this->ID_Usuarios, 
- 			'correo' => $this->correo, 
- 			'nickname' => $this->nickname, 
- 			'password' => $this->password, 
+            'RUT_E' => $this->RUT_E, 
+ 			'ID_Usuario' => $this->ID_Usuario, 
+ 			'Nombre' => $this->Nombre, 
+ 			'Apellidos' => $this->Apellidos, 
+ 			'Fecha_Nacimiento' => $this->Fecha_Nacimiento, 
+ 			'Direccion' => $this->Direccion, 
+ 			'Telefono' => $this->Telefono, 
+ 			'Carrera' => $this->Carrera, 
  			
         ];
     }
