@@ -35,8 +35,7 @@ class PROFESORESResource extends JsonResource
             'RUT_P' => $this->RUT_P, 
  			'ID_Usuario' => $this->ID_Usuario, 
  			'Nombre' => $this->Nombre, 
- 			'apellido_1' => $this->apellido_1, 
- 			'apellido_2' => $this->apellido_2, 
+ 			'Apellidos' => $this->Apellidos, 
  			'Telefono' => $this->Telefono, 
  			'Asignatura' => $this->Asignatura, 
  			

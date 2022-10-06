@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $RUT_P
  * @property int $ID_Usuario
  * @property string $Nombre
- * @property string $apellido_1
- * @property string $apellido_2
+ * @property string $Apellidos
  * @property int $Telefono
  * @property string $Asignatura
  * @property Usuario $usuario
@@ -41,7 +40,7 @@ class PROFESORES extends Model
     /**
      * @var array
      */
-    protected $fillable = ['ID_Usuario', 'Nombre', 'apellido_1', 'apellido_2', 'Telefono', 'Asignatura'];
+    protected $fillable = ['ID_Usuario', 'Nombre', 'Apellidos', 'Telefono', 'Asignatura'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

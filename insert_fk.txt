@@ -14,7 +14,7 @@ INSERT INTO laravel2.dbo.Estudiantes
 		   ,[Telefono]
            ,[Carrera])
 	 VALUES
-	 (212891754, 2, 'Armon', 'Ferrum Hank', '2002-03-24', 'Calle Siempredead 234', 966587645, 'INGC_INF');
+	 (212891762, 1, 'Armon', 'Ferrum Hank', '2002-03-24', 'Calle Siempredead 234', 966587645, 'INGC_INF');
 INSERT INTO laravel2.dbo.Ramos
            ([ID_Estudiantes]
            ,[Semestre]

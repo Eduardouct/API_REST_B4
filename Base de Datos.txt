@@ -21,8 +21,7 @@ CREATE TABLE "PROFESORES" (
   "RUT_P" INT PRIMARY KEY,
   "ID_Usuario" Int,
   "Nombre" Varchar(30),
-  "apellido_1" Varchar(30),
-  "apellido_2" Varchar(30),
+  "Apellidos" Varchar(30),
   "Telefono" Int,
   "Asignatura" varchar(30)
 );

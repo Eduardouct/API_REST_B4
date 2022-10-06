@@ -1,9 +1,9 @@
 <?php
 
 
-use App\Http\Controllers\Api\RamosController;
-
 use App\Http\Controllers\Api\PROFESORESController;
+
+use App\Http\Controllers\Api\RamosController;
 
 use App\Http\Controllers\Api\EstudiantesController;
 
@@ -36,5 +36,5 @@ Route::delete('/usuario/del/{ID_Usuarios}', [funcionCrud::class, 'deletebyid']);
 
 Route::apiResource('usuarios', UsuariosController::class);
 Route::apiResource('estudiantes', EstudiantesController::class);
-Route::apiResource('pROFESORES', PROFESORESController::class);
 Route::apiResource('ramos', RamosController::class);
+Route::apiResource('pROFESORES', PROFESORESController::class);
