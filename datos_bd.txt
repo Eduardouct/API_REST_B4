@@ -1,0 +1,202 @@
+|Profesores|
+
+INSERT INTO [apirest].[dbo].[PROFESORES]
+           ([RUT_P]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Telefono]
+           ,[Asignatura])
+     VALUES
+		(129856569
+		,14
+		,'Feliciano'
+		,'Arnaiz Arnau'
+		,70238344
+		,'matematicas'),
+		(123548932
+		,15
+		,'Fabio '
+		,'Vallés Carbajo '
+		,63498605
+		,'fisica'),
+		(564156892
+		,16
+		,'Angelino'
+		,'Rivero Balaguer'
+		,63511161
+		,'biologia'),
+		(215619874
+		,17
+		,'Herminio'
+		,'Saez quezada'
+		,63973249
+		,'algebra'),
+		(215418948
+		,18
+		,'María'
+		,'Manuela Pinto'
+		,79288003
+		,'calculo'),
+		(154189485
+		,19
+		,'Simón'
+		,'Palacios saez'
+		,67724284
+		,'arte'),
+		(515178418
+		,20
+		,'Blanca'
+		,'Filomena López'
+		,79406353
+		,'quimica')
+GO
+|Usuarios|
+INSERT INTO [apirest].[dbo].[Usuarios]
+           ([correo]
+           ,[nickname]
+           ,[password])
+     VALUES
+           ('Feliciano20@alu.uct.cl'
+           ,'Feliciano20'
+           ,'Feliciano123'),
+           ('Fabio20@alu.uct.cl'
+           ,'Fabio20'
+           ,'Fabio1234'),
+           ('Angelino20@alu.uct.cl'
+           ,'Angelino20'
+           ,'Angelino1234'),
+           ('Herminio20@alu.uct.cl'
+           ,'Herminio20'
+           ,'Herminio1234'),
+           ('María20@alu.uct.cl'
+           ,'María20'
+           ,'María1234'),
+           ('Simón20@alu.uct.cl'
+           ,'Simón20'
+           ,'Simón1234'),
+           ('Blanca20@alu.uct.cl'
+           ,'Blanca20'
+           ,'Blanca1234')
+     
+		
+
+GO
+|Estudiantes|
+INSERT INTO [dbo].[Estudiantes]
+           ([RUT_E]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Fecha_Nacimiento]
+           ,[Direccion]
+           ,[Telefono]
+           ,[Carrera])
+     VALUES
+           (212891754
+                  ,1
+                  ,'Armon'
+                  ,'Ferrum Hank'
+                  ,'2002-03-24'
+                  ,'Calle Siempredead 234'
+                  ,966587645
+                  , 'INGC_INF'),
+           (206845791
+		,2
+		,'fernando'
+		,'Guerrero Arnau'
+		,'2003-10-07'
+		,'av.Alemania 131'
+		,70239344
+		,'Antropología'),
+		(203765942
+		,3
+		,'Pablo '
+		,'Londra Vallés'
+		,'2001-11-16'
+		,'av.Recavaren 122'
+		,63452605
+		,'Psicología'),
+		(216718953
+		,4
+		,'Jorge'
+		,'Monte Bargas'
+		,'2001-05-07'
+		,'Victoria'
+		,63522261
+		,'Jorge2020@alu.uct.cl'
+		,'Kinesiología'),
+		(212796374
+		,5
+		,'Miguel'
+		,'Londra Quezada'
+		,'2001-03-06'
+		,'Francisco Salazar 245'
+		,63687249
+		,'Pedagogía en Inglés'),
+		(208569345
+		,6
+		,'Valentina'
+		,'Ballejos Pinto'
+		,'2001-03-01'
+		,'av.alemania'
+		,79203003
+		,'Derechos'),
+		(207854726
+		,7
+		,'Simon'
+		,'Castillo Merzedes'
+		,'2001-10-15'
+		,'av.San Martin 301'
+		,63674284'
+		,'diseño Grafico'),
+		(203247647
+		,8
+		,'Lucia'
+		,'López Frenandez'
+		,'2001-04-08'
+		,'Javierra Carrera 301'
+		,74106353
+		,'Arquitectura')
+GO
+|Ramos|
+
+INSERT INTO [dbo].[Ramos]
+           ([ID_Estudiantes]
+           ,[Semestre]
+           ,[asignatura]
+           ,[nota])
+     VALUES
+           (212891754
+                  ,2
+                  ,'INFO1128'
+                  ,5.0 ),
+           (206845791
+		,1
+		,'ANT1156'
+                ,6.0),
+		(203765942
+		,2
+		,'PSIC1124'
+		,4.6),
+		(216718953
+		,4
+		,'K4524'
+		,5.8),
+		(212796374
+		,3
+		,'PI3514'
+		,6.0),
+		(208569345
+		,2
+		,'D2756'
+		,5.5),
+		(207854726
+		,5
+		,'DG5001'
+		,6.9),
+		(203247647
+		,8
+		,'ARQ4631'
+		,1.0)
+GO
