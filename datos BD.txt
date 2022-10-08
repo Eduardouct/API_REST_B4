@@ -1,0 +1,392 @@
+CREATE TABLE "Estudiantes" (
+  "RUT_E" INT PRIMARY KEY,
+  "ID_Usuario" Int,
+  "Nombre" Varchar(50),
+  "Apellidos" Varchar(50),
+  "Fecha_Nacimiento" date,
+  "Direccion" Varchar(50),
+  "Telefono" Int,
+  "Carrera" varchar(50)
+);
+
+CREATE TABLE "Usuarios" (
+  "ID" INT IDENTITY(1,1) PRIMARY KEY,
+  "correo" varchar(50),
+  "nickname" varchar(50),
+  "password" varchar(50)
+);
+
+CREATE TABLE "PROFESORES" (
+  "RUT_P" INT PRIMARY KEY,
+  "ID_Usuario" Int,
+  "Nombre" Varchar(30),
+  "Apellidos" Varchar(30),
+  "Telefono" Int,
+  "Asignatura" varchar(30)
+);
+
+CREATE TABLE "Ramos" (
+  "ID_Estudiantes" int,
+  "ID_Ramos" INT IDENTITY(1,1) PRIMARY KEY,
+  "Semestre" int,
+  "asignatura" varchar(30),
+  "nota" float,
+);
+
+
+------------------------------------------------------------------------------
+
+ALTER TABLE PROFESORES
+ADD FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID);
+ALTER TABLE Estudiantes
+ADD FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID);
+ALTER TABLE Ramos
+ADD FOREIGN KEY (ID_Estudiantes) REFERENCES Estudiantes(RUT_E);
+
+------------------------------------------------------------------------------
+
+
+INSERT INTO [Usuarios_Actualizados].[dbo].[Usuarios]
+           ([correo]
+           ,[nickname]
+           ,[password])
+           
+	 VALUES
+
+
+           ('jamador21@alu.uct.cl'
+           ,'amador21'
+           ,'Josue123'),
+           
+           ('kabreu19@alu.uct.cl'
+           ,'abreu19'
+           ,'abreu1234'),
+           
+           ('epinilla18@alu.uct.cl'
+           ,'epinilla18'
+           ,'espinilla1234'),
+           
+           ('jariza19@alu.uct.cl'
+           ,'jariza'
+           ,'jariza1234'),
+           
+           ('csandoval18@alu.uct.cl'
+           ,'sadi'
+           ,'sandoval1234'),
+           
+           ('vreyes17@alu.uct.cl'
+           ,'reyes'
+           ,'reyes1234'),
+           
+           ('anaranjo19@alu.uct.cl'
+           ,'adela'
+           ,'naranjo1234'),
+           
+           ('pabellar21@alu.uct.cl'
+           ,'piter'
+           ,'piter1234'),
+           
+           ('sbarcelo18@alu.uct.cl'
+           ,'garcia'
+           ,'garcia1234'),
+           
+           ('aguiller20@alu.uct.cl'
+           ,'alexandra'
+           ,'alexa1234'),
+           
+           ('arminfierro2@gmail.com'
+           , 'arfnd'
+           , 'arfnd256')
+           
+
+GO
+
+----------------------------------------------------------------------------
+
+INSERT INTO Usuarios_Actualizados.dbo.Estudiantes
+           ([RUT_E]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Fecha_Nacimiento]
+           ,[Direccion]
+		   ,[Telefono]
+           ,[Carrera])
+	 VALUES
+	 
+		(188974686
+	    ,1
+		,'Josue'
+		,'Amador Cervantes'
+		,'20/10/2000'
+		,'Orrego Luco 87'
+		,945238344
+		,'Ingeneria Civil Informatica'),
+		
+		(281916629
+		,2
+		,'Karim'
+		,'Abreu Pinilla'
+		,'09/12/1997'
+		,'Camino Publico El Peral Km.16'
+		,987399605
+		,'Tecnologia Medica'),
+		
+		(318288577
+		,3
+		,'Eulogio'
+		,'Pinilla Candela'
+		,'08/08/1999'
+		,'Calle Temuco, 1039 Sector Centro'
+		,963511161
+		,'Ingeneria Industrial'),
+		
+		(438892036
+		,4
+		,'Jorge'
+		,'Ariza Catala'
+		,'22/09/1999'
+		,'Calle Manuel Montt, 251'
+		,998773249
+		,'Ingeneria Comercial'),
+		
+		(521703423
+		,5
+		,'Cristina'
+		,'Sandoval Iniesta'
+		,'11/05/2000'
+		,'Santa Amalia 306'
+		,979288003
+		,'Ingeneria Civil Informatica'),
+		
+		(678832014
+		,6
+		,'Vicenta'
+		,'Reyes Saez'
+		,'02/07/1998'
+		,'Galvarino Gallardo 1754'
+		,967724284
+		,'Arquitectura'),
+		
+		(442152314
+		,7
+		,'Adela'
+		,'Naranjo Sierra'
+		,'21/08/1999'
+		,'Avenida Holanda, 895'
+		,979406353
+		,'Diseño'),
+		
+		(480763912
+		,8
+		,'Pedro'
+		,'Abellar Fraga'
+		,'22/12/2002'
+		,'Pasaje San Cristóbal 5, 562'
+		,960160861
+		,'Psicologia'),
+		
+		(356940598
+		,9
+		,'Sacramento'
+		,'Barcelo García'
+		,'10/02/2000'
+		,'Caleta El Manzano'
+		,964702840
+		,'Arquitectura'),
+		
+		(188287598
+		,10
+		,'Alexandra'
+		,'Guiller Li'
+		,'11/07/2001'
+		,'Calle Rafael Alberti, 963'
+		,968273827
+		,'Medicina'),
+		
+		(212891754
+		,11
+		,'Armon'
+		,'Ferrum Hank'
+		,'2002-03-24'
+		,'Calle Siempredead 234'
+		,966587645
+		,'Ingeneria Civil Informatica')
+		
+GO
+
+----------------------------------------------------------------------------
+		
+		
+INSERT INTO [Usuarios_Actualizados].[dbo].[PROFESORES]
+           ([RUT_P]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Telefono]
+           ,[Asignatura])
+     VALUES
+		(129856569
+		,12
+		,'Feliciano'
+		,'Arnaiz Arnau'
+		,70238344
+		,'matematicas'),
+		
+		(123548932
+		,13
+		,'Fabio'
+		,'Vallés Carbajo'
+		,63498605
+		,'fisica'),
+		
+		(564156892
+		,14
+		,'Angelino'
+		,'Rivero Balaguer'
+		,63511161
+		,'biologia'),
+		
+		(215619874
+		,15
+		,'Herminio'
+		,'Saez quezada'
+		,63973249
+		,'algebra'),
+		
+		(215418948
+		,24
+		,'María'
+		,'Manuela Pinto'
+		,79288003
+		,'calculo'),
+		
+		(154189485
+		,16
+		,'Simón'
+		,'Palacios saez'
+		,67724284
+		,'arte'),
+		
+		(515178418
+		,17
+		,'Blanca'
+		,'Filomena López'
+		,79406353
+		,'quimica')
+GO
+
+
+----------------------------------------------------------------------------
+
+INSERT INTO [Usuarios_Actualizados].[dbo].[Usuarios]
+           ([correo]
+           ,[nickname]
+           ,[password])
+     VALUES
+           ('Feliciano20@alu.uct.cl'
+           ,'Feliciano20'
+           ,'Feliciano123'),
+           ('Fabio20@alu.uct.cl'
+           ,'Fabio20'
+           ,'Fabio1234'),
+           ('Angelino20@alu.uct.cl'
+           ,'Angelino20'
+           ,'Angelino1234'),
+           ('Herminio20@alu.uct.cl'
+           ,'Herminio20'
+           ,'Herminio1234'),
+           ('María20@alu.uct.cl'
+           ,'María20'
+           ,'María1234'),
+           ('Simón20@alu.uct.cl'
+           ,'Simón20'
+           ,'Simón1234'),
+           ('Blanca20@alu.uct.cl'
+           ,'Blanca20'
+           ,'Blanca1234')
+     
+		
+
+GO
+
+
+--------------------------------------------------------------------------
+
+INSERT INTO [Usuarios_Actualizados].[dbo].[PROFESORES]
+           ([RUT_P]
+		   ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Telefono]
+           ,[Asignatura])
+     VALUES	
+		
+
+		(564156892
+		,14
+		,'Angelino'
+		,'Rivero Balaguer'
+		,63511161
+		,'biologia'),
+		(215619874
+		,15
+		,'Herminio'
+		,'Saez quezada'
+		,63973249
+		,'algebra'),
+		(215418948
+		,16
+		,'María'
+		,'Manuela Pinto'
+		,79288003
+		,'calculo'),
+		(154189485
+		,17
+		,'Simón'
+		,'Palacios saez'
+		,67724284
+		,'arte'),
+		(515178418
+		,18
+		,'Blanca'
+		,'Filomena López'
+		,79406353
+		,'quimica')
+GO
+
+  
+----------------------------------------------------------------------
+ 
+  
+  INSERT INTO Usuarios_Actualizados.dbo.Ramos
+           ([ID_Estudiantes]
+           ,[Semestre]
+           ,[asignatura]
+           ,[nota])
+	 VALUES
+	 (188287598, 2, 'INFO1158', 5.0),
+	 (188974686, 2, 'INFO1158', 6.0),
+	 (212891754, 2, 'INFO1158', 7.0),
+	 (281916629, 2, 'INFO1158', 4.0),
+	 (318288577, 2, 'INFO1158', 3.5),
+	 (356940598, 2, 'INFO1158', 6.5),
+	 (438892036, 2, 'INFO1158', 3.9),
+	 (442152314, 2, 'INFO1158', 5.5),
+	 (480763912, 2, 'INFO1158', 2.5),
+	 (521703423, 2, 'INFO1158', 5.9),
+	 (678832014, 2, 'INFO1158', 4.1),
+	 
+	 (188287598, 2, 'MAT1187', 4.0),
+	 (188974686, 2, 'MAT1187', 3.0),
+	 (212891754, 2, 'MAT1187', 5.0),
+	 (281916629, 2, 'MAT1187', 5.5),
+	 (318288577, 2, 'MAT1187', 2.5),
+	 (356940598, 2, 'MAT1187', 4.5),
+	 (438892036, 2, 'MAT1187', 4.9),
+	 (442152314, 2, 'MAT1187', 3.5),
+	 (480763912, 2, 'MAT1187', 1.5),
+	 (521703423, 2, 'MAT1187', 4.9),
+	 (678832014, 2, 'MAT1187', 3.1)
+	 
+GO
