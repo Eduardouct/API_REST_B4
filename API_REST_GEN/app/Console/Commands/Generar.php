@@ -41,6 +41,8 @@ class Generar extends Command
      */
     public function handle()
     {
+        $this->call('optimize');
+        
         $x = new Query();
         $x = $x->cantidad();
         $y = new Query();
@@ -60,7 +62,5 @@ class Generar extends Command
             $tables = DB::insert("insert into laravel3.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'PUT', 'http://127.0.0.1:8000/api/$name/{{$name}}')");
             $tables = DB::insert("insert into laravel3.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'DELETE', 'http://127.0.0.1:8000/api/$name/{{$name}}')");
         }
-
-        $this->call('optimize');
     }
 }
