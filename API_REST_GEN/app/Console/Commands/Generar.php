@@ -40,9 +40,7 @@ class Generar extends Command
      * @return int
      */
     public function handle()
-    {
-        $this->call('optimize');
-        
+    {   
         $x = new Query();
         $x = $x->cantidad();
         $y = new Query();
@@ -53,6 +51,11 @@ class Generar extends Command
             $this->call('krlove:generate:model', [
                 'class-name' => $y[$i],'--table-name' => $y[$i], '--output-path' => 'Models', '--namespace' => 'App\Models', '--no-timestamps' => TRUE
             ]);
+        }
+        
+        $this->call('optimize');
+
+        for ($i = 0; $i < $x; $i++) {
             $this->call('api:generate', [
                 '--model' => $y[$i]
             ]);
