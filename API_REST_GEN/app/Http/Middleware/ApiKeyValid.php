@@ -6,13 +6,6 @@ use Closure;
 
 class ApiKeyValid
 {
-  /**
-   * Handle an incoming request.
-   *
-   * @param \Illuminate\Http\Request $request
-   * @param \Closure $next
-   * @return mixed
-   */
   public function handle($request, Closure $next)
   {
     if (!$request->has("api_key")) {
@@ -27,9 +20,9 @@ class ApiKeyValid
       $user = api_Key::where('key', '=', $inp)->first();
       if ($user === null) {
         return response()->json([
-          'status' => 401,
-          'message' => 'Acceso no autorizado',
-        ], 401);
+          'status' => 404,
+          'message' => 'API-Key no existente en la BD',
+        ], 404);
       }
     }
 
