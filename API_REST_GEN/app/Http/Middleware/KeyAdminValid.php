@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-use App\Models\api_Key;
+
 use Closure;
 
-class ApiKeyValid
+class KeyAdminValid
 {
   /**
    * Handle an incoming request.
@@ -23,9 +23,8 @@ class ApiKeyValid
     }
 
     if ($request->has("api_key")) {
-      $inp = $request->input("api_key");
-      $user = api_Key::where('key', '=', $inp)->first();
-      if ($user === null) {
+      $api_key = "key_cur_prod_fnPqT5xQEi5Vcb9wKwbCf65c3BjVGyBB";
+      if ($request->input("api_key") != $api_key) {
         return response()->json([
           'status' => 401,
           'message' => 'Acceso no autorizado',
