@@ -1,0 +1,43 @@
+
+========================================================================
+========================================================================
+
+CREATE PROC SP_BusquedaProfesorXnombre
+@nombre as varchar(30)
+AS
+SELECT * FROM Profesores
+WHERE Nombre = @nombre
+
+========================================================================
+========================================================================
+
+CREATE PROC SP_EliminarProfesorXnombre
+@nombre as varchar(30)
+AS
+DELETE FROM Profesores
+WHERE Nombre=@nombre
+
+========================================================================
+========================================================================
+
+CREATE PROC SP_BusquedaUsuarioXnickname
+@nombre as varchar(30)
+AS
+SELECT * FROM Usuarios
+WHERE nickname = @nombre
+
+
+========================================================================
+========================================================================
+
+CREATE PROC SP_EliminarUsuarioXid
+@ide as int
+AS
+DELETE FROM Profesores
+WHERE ID_Usuario = @ide
+DELETE FROM Usuarios
+WHERE ID = @ide 
+DELETE FROM Estudiantes WHERE ID_Usuario = @ide
+
+========================================================================
+========================================================================
