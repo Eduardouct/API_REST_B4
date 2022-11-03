@@ -1,0 +1,92 @@
+PROFESORES
+
+==================================================================
+
+
+INSERT INTO [laravel3].[dbo].[Profesores]
+           ([RUT_P]
+           ,[ID_Usuario]
+           ,[Nombre]
+           ,[Apellidos]
+           ,[Telefono]
+           ,[Asignatura])
+     VALUES
+        (129856569
+        ,2
+        ,'Feliciano'
+        ,'Arnaiz Arnau'
+        ,70238344
+        ,'matematicas'),
+        (123548932
+        ,3
+        ,'Fabio '
+        ,'Vallés Carbajo '
+        ,63498605
+        ,'fisica'),
+        (564156892
+        ,4
+        ,'Angelino'
+        ,'Rivero Balaguer'
+        ,63511161
+        ,'biologia'),
+        (215619874
+        ,5
+        ,'Herminio'
+        ,'Saez quezada'
+        ,63973249
+        ,'algebra'),
+        (215418948
+        ,6
+        ,'María'
+        ,'Manuela Pinto'
+        ,79288003
+        ,'calculo'),
+        (154189485
+        ,7
+        ,'Simón'
+        ,'Palacios saez'
+        ,67724284
+        ,'arte'),
+        (515178418
+        ,8
+        ,'Blanca'
+        ,'Filomena López'
+        ,79406353
+        ,'quimica')
+GO
+
+==================================================================
+
+USUARIOS
+
+==================================================================
+INSERT INTO [apirest].[dbo].[Usuarios]
+           ([correo]
+           ,[nickname]
+           ,[password])
+     VALUES
+           ('Feliciano20@alu.uct.cl'
+           ,'Feliciano20'
+           ,'Feliciano123'),
+           ('Fabio20@alu.uct.cl'
+           ,'Fabio20'
+           ,'Fabio1234'),
+           ('Angelino20@alu.uct.cl'
+           ,'Angelino20'
+           ,'Angelino1234'),
+           ('Herminio20@alu.uct.cl'
+           ,'Herminio20'
+           ,'Herminio1234'),
+           ('María20@alu.uct.cl'
+           ,'María20'
+           ,'María1234'),
+           ('Simón20@alu.uct.cl'
+           ,'Simón20'
+           ,'Simón1234'),
+           ('Blanca20@alu.uct.cl'
+           ,'Blanca20'
+           ,'Blanca1234')
+     
+		
+
+GO
