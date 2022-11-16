@@ -47,7 +47,8 @@ class Generar extends Command
         $y = new Query();
         $y = $y->nombres();
         $name = [];
-        
+        $this->call('passport:install');
+        $this->call("migrate");
         for ($i = 0; $i < $x; $i++) {
             $z = $y[$i];
             if($z == "oauth_refresh_tokens" or $z == "oauth_refresh_tokensController" or $z == "failed_jobs" or $z == "migrations" or $z == "oauth_access_tokens" or $z == "oauth_auth_codes" or $z == "oauth_clients" or $z == "oauth_personal_access_clients" or $z == "password_resets" or $z == "personal_access_tokens" or $z == "users"){
@@ -104,7 +105,6 @@ class Generar extends Command
         fclose($abrir2);
         $contenido2 = explode("\n", $contenido);
         $key = array_search("use Illuminate\Support\Facades\Route;", $contenido2);
-        $this->info($key);
         $key += 1;
         $contenido2[$key] = "Route::group(['auth:api', 'scope:Admin'], function () {";
         $key += 1;
@@ -130,11 +130,12 @@ class Generar extends Command
         $nuevo2 = implode("\n", $contenido2);    
         file_put_contents($dir3, $nuevo2);
         $this->call('optimize');
-        $this->call("migrate");
         $User = new User();
-        $tokA = $User->createToken("Admin", ['Admin'])->accessToken;
-        $tokU = $User->createToken("User", ['User'])->accessToken;
-        $this->info("Token Admin: ". $tokA);
-        $this->info("Token User: ". $tokU);
+        if($User->tokens()->get() == NULL){
+            $tokA = $User->createToken("Admin", ['Admin'])->accessToken;
+            $tokU = $User->createToken("User", ['User'])->accessToken;
+            $this->info("Token Admin: ". $tokA);
+            $this->info("Token User: ". $tokU);   
+        }
     }
 }
