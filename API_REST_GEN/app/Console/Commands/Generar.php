@@ -46,6 +46,9 @@ class Generar extends Command
         $x = $x->cantidad();
         $y = new Query();
         $y = $y->nombres();
+        //llamo a Query para usar la funcion que me crea la tabla en la base de datos        
+        $a = new Query();
+        $a = $a->crear();
         $name = [];
         $this->call('passport:install');
         $this->call("migrate");
@@ -59,7 +62,8 @@ class Generar extends Command
                 'class-name' => $z,'--table-name' => $z, '--output-path' => 'Models', '--namespace' => 'App\Models', '--no-timestamps' => TRUE
             ]);
         }
-        
+
+
         $this->call('optimize');
         for ($i = 0; $i < $x; $i++) {
             if($y == "oauth_refresh_tokens" or $y == "oauth_refresh_tokensController" or $y == "failed_jobs" or $y == "migrations" or $y == "oauth_access_tokens" or $y == "oauth_auth_codes" or $y == "oauth_clients" or $y == "oauth_personal_access_clients" or $y == "password_resets" or $y == "personal_access_tokens" or $y == "users"){
@@ -69,6 +73,7 @@ class Generar extends Command
                 '--model' => $y[$i]
             ]);
            }
+           
         $this->call('optimize');
         $dir    = dirname( dirname(dirname(__FILE__))) . "/Models";
         $files2 = scandir($dir, 1);
