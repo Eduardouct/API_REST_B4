@@ -37,8 +37,8 @@ Donde **opcionv** es el valor que se le tiene asignado a la vista que usted sele
 
 Con la url entregada con el comando anterior debemos agregar **(/procedimientos)**, en donde nos entregara los procedimientos que fueron creados en la base de datos, mas la opcion de metodo select o update para poder usar la consulta donde a continuacion le explicaremos en que tipo de ocaciones se debe usar.
 
-    SELECT : Para los procedimientos cuya funcion es mostrar datos de las tablas o tabla de en la base de 
-    datos.
+    SELECT : Para los procedimientos cuya funcion es mostrar datos de las tablas o tabla de en la base 
+    de datos.
 
     UPDATE : Para los procedimientos cuya funcion es eliminar o modificar datos en la base de datos.
 
@@ -47,9 +47,9 @@ Una vez teniendo una idea sobre que metodo usar para que funcione correctamente 
 
 
         /opcionP/opcionSU/valor
---- 
 
-    Donde:
+**Donde:**
+
     opcionP  = valor del procedimiento seleccionado
     opcionSU = metodo a usar (SELECT o UPDATE)
     valor    = valor o parametro a cambiar o eliminar
@@ -66,13 +66,13 @@ La url final deberia quedar de la siguiente forma:
 -
         App\Http\Controllers\procedimientos.php 
 
-    deberemos de agregar lo siguientes valores en la lineas dadas.
+    Deberemos de agregar lo siguientes valores en la lineas dadas.
 
-    ## linea 34  
+    ## Linea 34  
 -
         public function procedimiento($opcion,$seleccion,$id){
 -
-    dentro del ( ) en la funcion procedimiento debremos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
+    Dentro del ( ) en la funcion procedimiento debremos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
          Puede hacer esto tantas veces sean necesarias.
 
         EJEMPLO:
@@ -80,11 +80,11 @@ La url final deberia quedar de la siguiente forma:
         public function procedimiento($opcion,$seleccion,$id,$id1,$id2,...){
 
 
-    ## linea 40 y linea 47
+    ## Linea 40 y linea 47
         $consulta = DB::update("exec $valor '$id' ");
 
 
-    dentro del ( ) debera de de agregar la variables que creo en la linea anterior (linea 34) entre comillas simples ( '').
+    Dentro del ( ) debera de de agregar la variables que creo en la linea anterior (linea 34) entre comillas simples ( '').
 
         EJEMPLO:  
         $consulta = DB::update("exec $valor '$id' '$id1' '$id2' ....");
