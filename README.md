@@ -24,7 +24,7 @@ Para el uso de la vista a elegir se debe de agregar lo siguiente en la url entre
 
 Donde **opcionv** es el valor que se le tiene asignado a la vista que usted seleccionara. La url final deberia quedar de la siguiente forma:
 
-        http://127.0.0.1:8000/api/vistas/vistasV
+        http://127.0.0.1:8000/api/vistas/opcionV
 
 
 
@@ -71,9 +71,10 @@ La url final deberia quedar de la siguiente forma:
         http://127.0.0.1:8000/api/procedimientos/opcionP/opcionSU/valor 
 
 ## IMPORTANTE
-* En caso de necesitar mas valores para el procedimiento se debera de hacer lo siguiente:
+En caso de necesitar mas valores para el procedimiento se debera de hacer lo siguiente:
 
-    En el archivo procedimientos.php ubicado en 
+### En el archivo procedimientos.php ubicado en 
+
 -
         App\Http\Controllers\procedimientos.php 
 
