@@ -14,7 +14,7 @@
 
    En la ubicacion de la api donde  se le entregara una url como la siguiente:  
 
--                                                                                                                                                   
+                                                                                                                                                  
         http://127.0.0.1:8000
 
 Con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
@@ -41,7 +41,7 @@ Donde **opcionv** es el valor que se le tiene asignado a la vista que usted sele
 
    En la ubicacion de la api donde  se le entregara una url como la siguiente:  
 
--                                                                                                                                                   
+                                                                                                                                                  
         http://127.0.0.1:8000
 
 
