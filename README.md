@@ -83,7 +83,7 @@ En caso de necesitar mas valores para el procedimiento se debera de hacer lo sig
 
     Deberemos de agregar lo siguientes valores en la lineas dadas.
 
-    ## Linea 34  
+    ### Linea 34  
 -
         public function procedimiento($opcion,$seleccion,$id){
 -
@@ -95,7 +95,7 @@ En caso de necesitar mas valores para el procedimiento se debera de hacer lo sig
         public function procedimiento($opcion,$seleccion,$id,$id1,$id2,...){
 
 
-    ## Linea 40 y linea 47
+    ### Linea 40 y linea 47
         $consulta = DB::update("exec $valor '$id' ");
 
 
