@@ -47,7 +47,7 @@ class Generar extends Command
         $x = $x->cantidad();
         $y = new Query();
         $y = $y->nombres();
-        //llamo a Query para usar la funcion que me crea la tabla en la base de datos        
+          
         $a = new Query();
         $a = $a->crear();
         $name = [];
@@ -58,6 +58,7 @@ class Generar extends Command
             if($z == "apikey" or $z == "oauth_refresh_tokens" or $z == "oauth_refresh_tokensController" or $z == "failed_jobs" or $z == "migrations" or $z == "oauth_access_tokens" or $z == "oauth_auth_codes" or $z == "oauth_clients" or $z == "oauth_personal_access_clients" or $z == "password_resets" or $z == "personal_access_tokens" or $z == "users"){
                 continue;
             }
+            $this->info($z);
             $this->call('krlove:generate:model', [
                 
                 'class-name' => $z,'--table-name' => $z, '--output-path' => 'Models', '--namespace' => 'App\Models', '--no-timestamps' => TRUE
@@ -73,6 +74,12 @@ class Generar extends Command
             $this->call('api:generate', [
                 '--model' => $y[$i]
             ]);
+            $name = $y[$i];
+            $tables = DB::insert("insert into apiRest.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'GET', 'http://127.0.0.1:8000/api/$name')");
+        $tables = DB::insert("insert into apiRest.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'POST', 'http://127.0.0.1:8000/api/$name')");
+        $tables = DB::insert("insert into apiRest.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'PUT', 'http://127.0.0.1:8000/api/$name/{{$name}}')");
+        $tables = DB::insert("insert into apiRest.dbo.Apis ([ApiTable], [ApiResource], [ApiUri]) values ('$name', 'DELETE', 'http://127.0.0.1:8000/api/$name/{{$name}}')");
+   
            }
            
         $this->call('optimize');
