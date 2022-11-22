@@ -84,9 +84,9 @@ Llamadas desde passport al CRUD:
     requisitos:
        * usar metodo GET
        * como requisito para su funcion es necesario encender el servidor con el comando php artisan serve en la ubicacion de la api donde se le entregara una url
-         como la siguiente:
-                                                                
-                                                                                    http://127.0.0.1:8000
+         como la siguiente:                                                                                                                                      
+                                                                                    
+            **http://127.0.0.1:8000**
 
 * con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos(opcionV).
 * Para el uso de la vista a elegir se debe de agregar lo siguiente en la url entregada anterior:
