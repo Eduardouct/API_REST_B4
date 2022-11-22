@@ -47,7 +47,7 @@ class Generar extends Command
         $x = $x->cantidad();
         $y = new Query();
         $y = $y->nombres();
-          
+        $this->call('optimize');
         $a = new Query();
         $a = $a->crear();
         $name = [];
