@@ -90,7 +90,7 @@ En caso de necesitar mas valores para el procedimiento se debera de hacer lo sig
     Dentro del ( ) en la funcion procedimiento debemos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
          Puede hacer esto tantas veces sean necesarias.
 
-        EJEMPLO:
+    EJEMPLO:    
 
         public function procedimiento($opcion,$seleccion,$id,$id1,$id2,...){
 
@@ -101,7 +101,8 @@ En caso de necesitar mas valores para el procedimiento se debera de hacer lo sig
 
     Dentro del ( ) debera de de agregar la variables que creo en la linea anterior (linea 34) entre comillas simples ( '').
 
-        EJEMPLO:  
+    EJEMPLO:  
+
         $consulta = DB::update("exec $valor '$id' '$id1' '$id2' ....");
 
 Una vez agregado los valores que se desean usar para la consulta debemos ademas modificar la ruta de los procedimientos haciendo lo siguiente:
@@ -126,7 +127,8 @@ Debemos agregar las variables que fueron creadas anteriormente en procedimientos
 
             /{variabe}
 
-**Ejemplo:**
+**
+Ejemplo:
 
         Route::get("/procedimientos/{opcion}/{seleccion}/{id}/{id1}/{id2}....",[procedimientos::class,"procedimiento"]);
 
