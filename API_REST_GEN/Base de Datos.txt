@@ -1,0 +1,48 @@
+La BD se llama laravel3
+
+CREATE TABLE "Apis" (
+  "ApiID" INT IDENTITY(1,1) PRIMARY KEY,
+  "ApiTable" varchar(50),
+  "ApiResource" varchar(10),
+  "ApiUri" varchar(100)
+);
+
+CREATE TABLE "Estudiantes" (
+  "ID_Estudiantes" INT IDENTITY(1,1) PRIMARY KEY,
+  "ID_Usuarios" Int,
+  "Rut" Varchar(12),
+  "Nombre" Varchar(30),
+  "apellido_1" Varchar(30),
+  "apellido_2" Varchar(30),
+  "Fecha_Nacimiento" date,
+  "Direccion" Varchar(30),
+  "Telefono" Int,
+  "Correo" varchar(30),
+  "Carrera" varchar(30)
+);
+
+CREATE TABLE "Usuarios" (
+  "ID_Usuarios" INT IDENTITY(1,1) PRIMARY KEY,
+  "correo" varchar(50),
+  "nickname" varchar(50),
+  "password" varchar(50)
+);
+
+CREATE TABLE "PROFESORES" (
+  "ID_Profesor" INT IDENTITY(1,1) PRIMARY KEY,
+  "ID_Usuarios" Int,
+  "Nombre" Varchar(30),
+  "apellido_1" Varchar(30),
+  "apellido_2" Varchar(30),
+  "Telefono" Int,
+  "Correo" varchar(30),
+  "Asignatura" varchar(30)
+);
+
+CREATE TABLE "Ramos" (
+  "ID_Estudiantes" varchar(30),
+  "ID_Ramos" INT IDENTITY(1,1) PRIMARY KEY,
+  "Semestre" int,
+  "asignatura" varchar(30),
+  "nota" float,
+);
