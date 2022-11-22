@@ -3,7 +3,9 @@
 ## VISTAS
     requisitos:
        * usar metodo GET
-       * como requisito para su funcion es necesario encender el servidor con el comando php artisan serve en la ubicacion de la api donde se le entregara una url como la siguiente:                                                        
+       * como requisito para su funcion es necesario encender el servidor 
+         con el comando php artisan serve en la ubicacion de la api 
+         donde  se le entregara una url como la siguiente:                                                        
 -                                                                                                                                                       
         http://127.0.0.1:8000
 
