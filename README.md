@@ -127,7 +127,6 @@ Debemos agregar las variables que fueron creadas anteriormente en procedimientos
 
             /{variabe}
 
-**
 Ejemplo:
 
         Route::get("/procedimientos/{opcion}/{seleccion}/{id}/{id1}/{id2}....",[procedimientos::class,"procedimiento"]);
