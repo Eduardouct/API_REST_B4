@@ -4,7 +4,7 @@
     requisitos:
        * usar metodo GET
        * como requisito para su funcion es necesario encender el servidor 
-         con el comando php artisan serve en la ubicacion de la api 
+         con el comando ( php artisan serve) en la ubicacion de la api 
          donde  se le entregara una url como la siguiente:                                                        
 -                                                                                                                                                       
         http://127.0.0.1:8000
@@ -23,8 +23,10 @@ Donde **opcionv** es el valor que se le tiene asignado a la vista que usted sele
 ## PROCEDIMIENTOS ALMACENADOS
     requisitos:
        * usar metodo GET
-       * como requisito para su funcion es necesario encender el servidor con el comando php artisan serve en la ubicacion de la api donde se le entregara una url como la siguiente:                                                        
--                                                                                                                                                       
+       * como requisito para su funcion es necesario encender el servidor 
+         con el comando ( php artisan serve) en la ubicacion de la api 
+         donde  se le entregara una url como la siguiente:                                                        
+-                                                                                                                                                      
         http://127.0.0.1:8000
 
 Con la url entregada con el comando anterior debemos agregar **(/procedimientos)**, en donde nos entregara los procedimientos que fueron creados en la base de datos, mas la opcion de metodo select o update para poder usar la consulta donde a continuacion le explicaremos en que tipo de ocaciones se debe usar.
