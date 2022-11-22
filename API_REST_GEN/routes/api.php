@@ -9,4 +9,5 @@ Route::get("/procedimientos",[procedimientos::class,"MostrarP"]);
 Route::get("/procedimientos/{opcion}/{seleccion}/{id}",[procedimientos::class,"procedimiento"]);
 Route::get("/vistas",[vistas::class,"MostrarV"]);
 Route::get("/vistas/{opcion}",[vistas::class,"vista"]);
-#ind
+
+#inde

@@ -122,7 +122,7 @@ class Generar extends Command
         fclose($abrir2);
         $contenido2 = explode("\n", $contenido3);
         
-        $key = array_search("#ind", $contenido2);
+        $key = array_search("#inde", $contenido2);
         $this->info($key);
         $key += 1;
         $contenido2[$key] = "Route::group(['middleware' => 'modkey.valid'], function () {";
