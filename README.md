@@ -17,7 +17,7 @@
                                                                                                                                                   
         http://127.0.0.1:8000
 
-Con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
+Con la url entregada con el debemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
 Para el uso de la vista a elegir se debe de agregar lo siguiente en la url entregada anterior:
                     
     /opcionV
@@ -57,7 +57,7 @@ Con la url entregada con el comando anterior debemos agregar **(/procedimientos)
     UPDATE : Para los procedimientos cuya funcion es eliminar o modificar datos en la base de datos.
 
 
-Una vez teniendo una idea sobre que metodo usar para que funcione correctamente deberemos de agregar lo siguiente en la url entregada anteriormente:
+Una vez teniendo una idea sobre que metodo usar para que funcione correctamente debemos de agregar lo siguiente en la url entregada anteriormente:
 
 
         /opcionP/opcionSU/valor
@@ -117,12 +117,12 @@ Debemos ubicar la siguiente ruta:
         Route::get("/procedimientos/{opcion}/{seleccion}/{id}",[procedimientos::class,"procedimiento"]);
 
 
-**donde en:**
+**Donde en:**
 
         "/procedimientos/{opcion}/{seleccion}/{id}" 
             
        
-debemos agregar las variables que fueron creadas anteriormente en procedimientos.php de la siguiente forma:  
+Debemos agregar las variables que fueron creadas anteriormente en procedimientos.php de la siguiente forma:  
 
             /{variabe}
 
