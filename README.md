@@ -5,15 +5,16 @@
 
 ### **requisitos:**
 
-1.Usar metodo GET
+1. Usar metodo GET
 
-2.Como requisito para su funcion es necesario encender el servidor con el comando 
+2. Como requisito para su funcion es necesario encender el servidor con el comando 
         
         ( php artisan serve) 
 
 
-En la ubicacion de la api donde  se le entregara una url como la siguiente:                                                        
--                                                                                                                                                     
+   En la ubicacion de la api donde  se le entregara una url como la siguiente:  
+
+-                                                                                                                                                   
         http://127.0.0.1:8000
 
 Con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
@@ -31,15 +32,16 @@ Donde **opcionv** es el valor que se le tiene asignado a la vista que usted sele
 
 ### **requisitos:**
 
-1.Usar metodo GET
+1. Usar metodo GET
 
-2.Como requisito para su funcion es necesario encender el servidor con el comando 
+2. Como requisito para su funcion es necesario encender el servidor con el comando 
         
         ( php artisan serve) 
 
 
-En la ubicacion de la api donde  se le entregara una url como la siguiente:                                                        
--                                                                                                                                                     
+   En la ubicacion de la api donde  se le entregara una url como la siguiente:  
+
+-                                                                                                                                                   
         http://127.0.0.1:8000
 
 
