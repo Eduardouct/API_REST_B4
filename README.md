@@ -11,13 +11,14 @@ Estado de Proyecto:
 El proyecto se encuentra en su version Final.
 
 Los Requisitos del Entorno:
--Sql Server 2008 R2 o Sql Server 2019
--Php 7
--Laravel 9
--Postman(Para realizar pruebas)
+- Sql Server 2008 R2 o Sql Server 2019
+- Php 7.4
+- Laravel 7.X
+- Postman(Para realizar pruebas)
 
 Instalacion:
-
+- Obtener el proyecto Eduardouct/API_REST_B4/ en la rama main en github
+- Seguir las instrucciones del punto 1.-
 
 Bugs o Errores:
 - Al realizar dos veces el comando php artisan Generar:modelos se generan rutas y líneas que no deberían estar en "routes/api.php"
@@ -43,14 +44,14 @@ Información general
 * Se recomienda no tener tablas de nombres iguales a los que están en las migraciones, por su posible eliminación de datos, laravel y las api-keys requieren de algunas migraciones para el funcionamiento, revisar nombres.
 
 
-Para el proceso de la creación de todo el programa, que se inicializa con el comando "app/Console/Commands/Generar.php" son necesarios algunos requisitos de laravel para el funcionamiento inicial de este.
+1.- Para el proceso de la creación de todo el programa, que se inicializa con el comando "app/Console/Commands/Generar.php" son necesarios algunos requisitos de laravel para el funcionamiento inicial de este:
 - Estar en la carpeta principal y en consola aplicar el comando "composer install".
 - En la carpeta principal en el archivo ".env" cambiar el nombre de su base de datos SQLServer en "DB_DATABASE=", ejemplo: "DB_DATABASE=apiRest".
 - Ejecutar el comando "php artisan Generar:modelos" para generar automáticamente los CRUD de cada tabla en la base de datos. Se les dará una api-key de User y Admin, el administrador puede generar toda petición y el usuario solo puede hacer get a las tablas. Esta api-key se debe pasar a postman con un parámetro de query llamado api_key.
 - Ejecutar el comando php artisan serve, aqui se inicia el servidor y ya se puede ir a postman para hacer las consultas que se quieran.
 
 
-Como funciona el comando principal "Generar.php":
+2.- Como funciona el comando principal "Generar.php":
 - Por si hay algun bug en composer se ejecuta al inicio el comando "composer install"
 - Se ejecuta un controlador llamado "Query.php" el cual nos entrega los nombres y cantidad de tablas de la base de datos para ejecutar otros comandos.
 - Se ejecutan los comandos "php artisan migrate" para migrar a la base de datos las tablas requeridas para el funcionamiento de esta aplicación, principalmente api-keys y "php artisan passport:install" para instalar e inicializar el paquete que se usará para la creación de api-keys.
@@ -73,7 +74,7 @@ Como funciona el comando principal "Generar.php":
 - Se crea el token de admin y ususario dentro de passport y estos se muestran por consola para guardarlos y usarlos, el token de Admin se guarda con rol de Admin en la tabla migrada apikey y el token de Usuario se guarda con rol de User.
 
 
-Llamadas desde passport al CRUD:
+3.- Llamadas desde passport al CRUD:
 - Si se llamo al comando Generar.php con una tabla "Usuarios", se llama desde passport con la ruta http://127.0.0.1:8000/api/usuarios y http://127.0.0.1:8000/api/usuarios/ID
 
 
