@@ -84,9 +84,9 @@ En caso de necesitar mas valores para el procedimiento se debera de hacer lo sig
     Se debe de agregar lo siguientes valores en la lineas dadas.
 
     ### Linea 34  
--
+
         public function procedimiento($opcion,$seleccion,$id){
--
+
     Dentro del ( ) en la funcion procedimiento debemos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
          Puede hacer esto tantas veces sean necesarias.
 
