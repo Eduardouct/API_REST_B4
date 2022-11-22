@@ -20,11 +20,14 @@
 Con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
 Para el uso de la vista a elegir se debe de agregar lo siguiente en la url entregada anterior:
                     
-        /opcionV
+    /opcionV
 
-Donde **opcionv** es el valor que se le tiene asignado a la vista que usted seleccionara. La url final deberia quedar de la siguiente forma:
+**Donde**
 
-        http://127.0.0.1:8000/api/vistas/opcionV
+    opcionv = es el valor que se le tiene asignado a la vista que usted seleccionara. 
+La url final deberia quedar de la siguiente forma:
+
+    http://127.0.0.1:8000/api/vistas/opcionV
 
 
 
