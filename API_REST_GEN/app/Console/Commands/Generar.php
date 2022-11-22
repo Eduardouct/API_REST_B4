@@ -115,12 +115,14 @@ class Generar extends Command
             $nuevo = implode("\n", $contenido2);    
             file_put_contents($dir2, $nuevo);
         }
+        $this->call('optimize');
         $dir3 = dirname(dirname(dirname(dirname(__FILE__)))) . "/routes/api.php";
         $abrir2 = fopen($dir3, 'r+');
         $contenido3 = fread($abrir2, filesize($dir3));
         fclose($abrir2);
         $contenido2 = explode("\n", $contenido3);
-        $key = array_search("use Illuminate\Support\Facades\Route;", $contenido2);
+        
+        $key = array_search("#ind", $contenido2);
         $this->info($key);
         $key += 1;
         $contenido2[$key] = "Route::group(['middleware' => 'modkey.valid'], function () {";
