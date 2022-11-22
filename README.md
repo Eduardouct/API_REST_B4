@@ -5,11 +5,11 @@
 
 ### **requisitos:**
 
-       * usar metodo GET
-       * como requisito para su funcion es necesario encender el servidor 
-         con el comando ( php artisan serve) en la ubicacion de la api 
-         donde  se le entregara una url como la siguiente:                                                        
--                                                                                                                                                       
+    * usar metodo GET
+    * como requisito para su funcion es necesario encender el servidor 
+    con el comando ( php artisan serve) en la ubicacion de la api 
+    donde  se le entregara una url como la siguiente:                                                        
+-                                                                                                                                                     
         http://127.0.0.1:8000
 
 Con la url entregada con el deberemos agregar lo siguiente **(/vistas)**, en donde nos entregara las vistas que fueron creadas en la base de datos **(opcionV)**.
@@ -19,7 +19,7 @@ Para el uso de la vista a elegir se debe de agregar lo siguiente en la url entre
 
 Donde **opcionv** es el valor que se le tiene asignado a la vista que usted seleccionara. La url final deberia quedar de la siguiente forma:
 
-            http://127.0.0.1:8000/api/vistas/vistasV
+        http://127.0.0.1:8000/api/vistas/vistasV
 
 
 
@@ -28,16 +28,17 @@ Donde **opcionv** es el valor que se le tiene asignado a la vista que usted sele
 
 ### **requisitos:**
 
-       * usar metodo GET
-       * como requisito para su funcion es necesario encender el servidor 
-         con el comando ( php artisan serve) en la ubicacion de la api 
-         donde  se le entregara una url como la siguiente:                                                        
+    * usar metodo GET
+    * como requisito para su funcion es necesario encender el servidor 
+    con el comando ( php artisan serve) en la ubicacion de la api 
+    donde  se le entregara una url como la siguiente:                                                        
 -                                                                                                                                                       
-        http://127.0.0.1:8000
+    http://127.0.0.1:8000
 
 Con la url entregada con el comando anterior debemos agregar **(/procedimientos)**, en donde nos entregara los procedimientos que fueron creados en la base de datos, mas la opcion de metodo select o update para poder usar la consulta donde a continuacion le explicaremos en que tipo de ocaciones se debe usar.
 
-    SELECT : Para los procedimientos cuya funcion es mostrar datos de las tablas o tabla de en la base de datos.
+    SELECT : Para los procedimientos cuya funcion es mostrar datos de las tablas o tabla de en la base de 
+    datos.
 
     UPDATE : Para los procedimientos cuya funcion es eliminar o modificar datos en la base de datos.
 
@@ -45,7 +46,7 @@ Con la url entregada con el comando anterior debemos agregar **(/procedimientos)
 Una vez teniendo una idea sobre que metodo usar para que funcione correctamente deberemos de agregar lo siguiente en la url entregada anteriormente:
 
 
-    /opcionP/opcionSU/valor
+        /opcionP/opcionSU/valor
 --- 
 
     Donde:
@@ -56,22 +57,22 @@ Una vez teniendo una idea sobre que metodo usar para que funcione correctamente 
 La url final deberia quedar de la siguiente forma:
 
 -
-            http://127.0.0.1:8000/api/procedimientos/opcionP/opcionSU/valor 
+        http://127.0.0.1:8000/api/procedimientos/opcionP/opcionSU/valor 
 
 ## IMPORTANTE
 * En caso de necesitar mas valores para el procedimiento se debera de hacer lo siguiente:
 
     En el archivo procedimientos.php ubicado en 
 -
-            App\Http\Controllers\procedimientos.php 
+        App\Http\Controllers\procedimientos.php 
 
     deberemos de agregar lo siguientes valores en la lineas dadas.
 
     ## linea 34  
 -
-        --> public function procedimiento($opcion,$seleccion,$id){
+        public function procedimiento($opcion,$seleccion,$id){
 -
-    dentro del ( ) en la funcion procedimientos debremos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
+    dentro del ( ) en la funcion procedimiento debremos agregar una coma( , ) seguido de $idN (donde N es el numero que se le asignara para la distincion de la variable). 
          Puede hacer esto tantas veces sean necesarias.
 
         EJEMPLO:
@@ -85,25 +86,25 @@ La url final deberia quedar de la siguiente forma:
 
     dentro del ( ) debera de de agregar la variables que creo en la linea anterior (linea 34) entre comillas simples ( '').
 
-            EJEMPLO:  
-            $consulta = DB::update("exec $valor '$id' '$id1' '$id2' ....");
+        EJEMPLO:  
+        $consulta = DB::update("exec $valor '$id' '$id1' '$id2' ....");
 
 Una vez agregado los valores que se desean usar para la consulta debemos ademas modificar la ruta de los procedimientos haciendo lo siguiente:
 
 ### En el archivo api.php ubicado en : 
             
-            routes/api.php  
+        routes/api.php  
             
 
 
 Debemos ubicar la siguiente ruta:
 
-            Route::get("/procedimientos/{opcion}/{seleccion}/{id}",[procedimientos::class,"procedimiento"]);
+        Route::get("/procedimientos/{opcion}/{seleccion}/{id}",[procedimientos::class,"procedimiento"]);
 
 
 **donde en:**
 
-            "/procedimientos/{opcion}/{seleccion}/{id}" 
+        "/procedimientos/{opcion}/{seleccion}/{id}" 
             
        
 debemos agregar las variables que fueron creadas anteriormente en procedimientos.php de la siguiente forma:  
@@ -112,7 +113,7 @@ debemos agregar las variables que fueron creadas anteriormente en procedimientos
 
 **Ejemplo:**
 
-      Route::get("/procedimientos/{opcion}/{seleccion}/{id}/{id1}/{id2}....",[procedimientos::class,"procedimiento"]);
+        Route::get("/procedimientos/{opcion}/{seleccion}/{id}/{id1}/{id2}....",[procedimientos::class,"procedimiento"]);
 
 
 De esta forma es que podemos agregar mas valores para poder usar nuestro pocedimiento almacenado.
